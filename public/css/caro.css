@@ -1,0 +1,168 @@
+﻿/* Han Mai: CSS for CARO */
+/* Stick the FOOTER */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 182px; /* Margin bottom by footer height +20 margin */
+}
+header{
+    padding-bottom:10px;
+}
+
+.caro-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /*max-height: 162px; // fixed height for footer */
+}
+
+/* CARO CSS */
+.caro-x {
+    color: #2196f3;/*blue*/
+}
+.caro-o {
+    color: #f44336; /*red*/
+}
+.caro-win {
+    background-color: #ffff00 !important; /*yellow*/
+}
+.caro-temp {
+    color: #607d8b;
+}
+
+.feature-btn-group {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    z-index:10;
+    transition: all 1s;
+}
+
+@media screen and (min-width: 601px) {
+    .feature-btn-group {
+        top:35px;
+    }
+}
+
+.feature-btn-group a {
+    width: auto;
+    height: auto;
+}
+
+#sec-loader {
+    text-align:center;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-top:-35px;
+    margin-left:-32px;
+}
+
+.caro-game-item-wrapper {
+    padding:0;
+}
+
+.caro-game-item-wrapper > div{
+    margin:2px;
+}
+
+/* fix template CSS issue*/
+.dropdown-content.select-dropdown.active{
+    z-index:2;
+
+}
+.modal{
+    overflow-y:visible;
+}
+.overlay-full-page{
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    opacity:0.6;
+    background-color:white;
+    text-align:center;
+    z-index:1001;
+    display:none;
+    transition: opacity 2s;
+}
+.overlay-full-page > *{
+    position:fixed;
+    top:50%;
+    left:50%;
+    width:400px;
+    height:200px;
+    margin-top:-100px;
+    margin-left:-200px;
+}
+@media screen and (min-width: 601px) {
+    .overlay-full-page > * {
+        width: 620px;
+        margin-left: -310px;
+    }
+}
+
+.caro-card-bar{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:56px;
+    margin-top:0;
+    padding:10px;
+}
+#d-board{
+    position:relative;
+    margin-top:57px;
+    width:100%;
+    min-height:300px;
+    overflow:auto;
+    padding:0;
+}
+
+#tbl-board{
+    width: auto;
+    margin: auto;
+}
+#tbl-board td {
+    border: 1px solid black;
+    min-width: 20px;
+    min-height: 20px;
+    max-width: 20px;
+    max-height: 20px;
+    height: 20px;
+    width: 20px;
+    line-height: 1;
+    font-weight: bold;
+    text-align: center;
+    text-transform: capitalize;
+    padding:0;
+}
+@media screen and (min-width: 601px) {
+    #tbl-board td {
+        min-width: 25px;
+        min-height: 25px;
+        max-width: 25px;
+        max-height: 25px;
+        height: 25px;
+        width: 25px;
+    }
+}
+
+.caro-user-stat {
+    font-size:0.8em;
+}
+
+.caro-container {
+  max-width: 1280px;
+  }
+
+@media only screen and (min-width : 601px) {
+  .caro-container {
+    padding: 0 1.5rem;
+    margin: 0 auto;
+  }
+}

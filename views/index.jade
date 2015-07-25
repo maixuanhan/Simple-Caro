@@ -1,0 +1,66 @@
+﻿doctype html
+html
+    head
+        meta(charset="utf-8")
+        title Caro
+        meta(name="description", content="Caro")
+        meta(name="viewport", content="width=device-width")
+        link(rel="stylesheet", href="/materialize/css/materialize.css")
+        link(rel="stylesheet", href="/css/caro.css")
+        script(type="text/javascript", src="/script/jquery-2.1.4.js")
+        script(type="text/javascript", src="/materialize/js/materialize.js")
+
+    body.blue.lighten-5
+        header
+            nav.blue.darken-1
+                div.nav-wrapper.container
+                    a.brand-logo(href="#") CARO
+
+        section.feature-btn-group
+            a#btn-create-game.btn-floating.btn-large.waves-effect.waves-light.z-depth-2.red(title="New game")
+                i.mdi-content-add
+            | #{' '}
+            a#btn-join-ran-game.btn-floating.btn-large.waves-effect.waves-light.z-depth-2.green(title="Join random game")
+                i.mdi-av-shuffle
+
+        section#sec-loader
+            div.preloader-wrapper.big.active
+                div.spinner-layer.spinner-blue-only
+                    div.circle-clipper.left
+                        div.circle
+                    div.gap-patch
+                        div.circle
+                    div.circle-clipper.right
+                        div.circle
+
+        section#sec-game-list.row
+            div.caro-container
+
+        footer.caro-footer.page-footer.blue.darken-1
+            div.container
+                h5.white-text CARO
+                p.grey-text.text-lighten-4 A simple caro game which you can play online with your friend.
+            div.footer-copyright
+                div.container © 2015 written by 
+                    a.white-text(href="https://vn.linkedin.com/in/hanmai", target="_blank") Han M.
+
+        //- Modal Structure
+        div#modal1.modal
+            div.modal-content
+                h4 Create new game
+                div.row
+                    form#frm-new-game.col.s12(action="/new-game", method="POST")
+                        div.row
+                            div.input-field.col.s12
+                                input#ip-name.validate(name="name", type="text", maxlength="30")
+                                label(for="ip-name") Your name
+                            div.input-field.col.s12
+                                select(name="boardsize")
+                                    option(value="small", selected) 15 x 15
+                                    option(value="medium") 20 x 30
+                                    option(value="large") 40 x 40
+                                label Board size
+            div.modal-footer
+                a.modal-action.modal-close.waves-effect.waves-light.btn-flat(href="#") Discard
+                a#btn-submit-frm.modal-action.waves-effect.waves-green.btn-flat(href="#") Create
+        script(type="text/javascript", src="index.js")

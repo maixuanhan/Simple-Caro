@@ -1,0 +1,56 @@
+﻿doctype html
+html
+    head
+        meta(charset="utf-8")
+        title Game - Caro
+        meta(name="description", content="Caro Game")
+        meta(name="viewport", content="width=device-width")
+        link(rel="stylesheet", href="/materialize/css/materialize.css")
+        link(rel="stylesheet", href="/css/caro.css")
+        script(type="text/javascript", src="/script/jquery-2.1.4.js")
+        script(type="text/javascript", src="/script/jquery.cookie.js")
+        script(type="text/javascript", src="/materialize/js/materialize.js")
+
+    body.blue.lighten-5
+        header
+            nav.blue.darken-1
+                div.nav-wrapper.container
+                    a.brand-logo(href="#") CARO
+
+        div.row
+            div.col.s12.l8
+                div.card-panel.lime.accent-1(style="heightx:400px; position:relative")
+                    div.card-panel.caro-card-bar.z-depth-2.purple.darken-2
+                        a#btn-close.btn-floating.waves-effect.waves-light.red.right(style="margin-left:15px")
+                            i.mdi-navigation-close
+                        a#btn-ready.waves-effect.waves-light.btn.right Ready!
+                        span.white-text(style="font-size:1.5em") Room ##{room}: #{boardSize.row} x #{boardSize.column}
+                    div#d-board
+                        table#tbl-board
+            div.col.s12.l4
+                div.card-panel.grey.lighten-3
+                    ul#lst-players.collection
+
+        footer.caro-footer.page-footer.blue.darken-1
+            div.container
+                h5.white-text CARO
+                p.grey-text.text-lighten-4 A simple caro game which you can play online with your friend.
+            div.footer-copyright
+                div.container © 2015 written by 
+                    a.white-text(href="https://vn.linkedin.com/in/hanmai", target="_blank") Han M.
+
+        //- Modal Structure
+        div#modal1.modal
+            div.modal-content
+                h4 Input your name
+                div.row
+                    form.col.s12
+                        div.row
+                            div.input-field.col.s12
+                                input#ip-name.validate(name="name", type="text", maxlength="30")
+                                label(for="ip_name") Your name
+            div.modal-footer
+                a#btn-name-ok.modal-action.waves-effect.waves-green.btn-flat(href="#") Okay
+        div#d-conn-closed.overlay-full-page
+            h5 Connection is CLOSED. You will be brought to the home page!
+        script(type="text/javascript", src="/game.js")
