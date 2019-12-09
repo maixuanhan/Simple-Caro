@@ -10,7 +10,7 @@
         "jade": "*",
         "body-parser": "*",
         "cookie-parser": "*",
-        "ws": "0.4.x"
+        "ws": "7.2.x"
     },
     "engines": {
         "node": "0.10.x"
